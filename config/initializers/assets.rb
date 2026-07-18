@@ -1,12 +1,12 @@
-# Be sure to restart your server when you modify this file.
+# このファイルを変更したら、サーバーを再起動してください。
 
-# Version of your assets, change this if you want to expire all your assets.
+# アセットのバージョンです。変更するとすべてのアセットが無効化されます。
 Rails.application.config.assets.version = "1.0"
 
-# Add additional assets to the asset load path.
+# アセットの読み込みパスに追加のアセットを加えます。
 # Rails.application.config.assets.paths << Emoji.images_path
 
-# Precompile additional assets.
-# application.js, application.css, and all non-JS/CSS in the app/assets
-# folder are already added.
+# 追加のアセットをプリコンパイルします。
+# application.js、application.css、および app/assets 配下の非 JS/CSS ファイルは
+# すでに追加済みです。
 # Rails.application.config.assets.precompile += %w[ admin.js admin.css ]

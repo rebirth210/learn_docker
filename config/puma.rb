@@ -1,34 +1,27 @@
-# This configuration file will be evaluated by Puma. The top-level methods that
-# are invoked here are part of Puma's configuration DSL. For more information
-# about methods provided by the DSL, see https://puma.io/puma/Puma/DSL.html.
+# この設定ファイルは Puma で読み込まれます。ここで呼び出されるトップレベルのメソッドは
+# Puma の設定 DSL の一部です。詳細は https://puma.io/puma/Puma/DSL.html を参照してください。
 
-# Puma starts a configurable number of processes (workers) and each process
-# serves each request in a thread from an internal thread pool.
+# Puma は設定可能な数のワーカーを起動し、それぞれのワーカーが内部スレッドプールから
+# スレッドを使ってリクエストを処理します。
 #
-# The ideal number of threads per worker depends both on how much time the
-# application spends waiting for IO operations and on how much you wish to
-# to prioritize throughput over latency.
+# 1 つのワーカーあたりのスレッド数は、I/O 待ちの時間と、スループットとレイテンシのどちらを重視するかによって変わります。
 #
-# As a rule of thumb, increasing the number of threads will increase how much
-# traffic a given process can handle (throughput), but due to CRuby's
-# Global VM Lock (GVL) it has diminishing returns and will degrade the
-# response time (latency) of the application.
+# 一般的には、スレッド数を増やすと処理できるトラフィック量は増えますが、CRuby の
+# Global VM Lock (GVL) の影響で効果は薄くなり、応答時間が悪化することがあります。
 #
-# The default is set to 3 threads as it's deemed a decent compromise between
-# throughput and latency for the average Rails application.
+# デフォルトは 3 スレッドに設定されており、一般的な Rails アプリケーションのバランスとして妥当とみなされています。
 #
-# Any libraries that use a connection pool or another resource pool should
-# be configured to provide at least as many connections as the number of
-# threads. This includes Active Record's `pool` parameter in `database.yml`.
+# 接続プールやその他のリソースプールを使うライブラリでは、スレッド数分以上の接続を用意する必要があります。
+# これは Active Record の `database.yml` の `pool` パラメータも含みます。
 threads_count = ENV.fetch("RAILS_MAX_THREADS", 3)
 threads threads_count, threads_count
 
-# Specifies the `port` that Puma will listen on to receive requests; default is 3000.
+# Puma が受信したリクエストを待ち受けるポートを指定します。デフォルトは 3000 です。
 port ENV.fetch("PORT", 3000)
 
-# Allow puma to be restarted by `bin/rails restart` command.
+# `bin/rails restart` コマンドで Puma を再起動できるようにします。
 plugin :tmp_restart
 
-# Specify the PID file. Defaults to tmp/pids/server.pid in development.
-# In other environments, only set the PID file if requested.
+# PID ファイルを指定します。開発環境では tmp/pids/server.pid が既定値です。
+# 他の環境では、要求された場合のみ PID ファイルを設定します。
 pidfile ENV["PIDFILE"] if ENV["PIDFILE"]

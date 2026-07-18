@@ -4,12 +4,12 @@ require "rails/test_help"
 
 module ActiveSupport
   class TestCase
-    # Run tests in parallel with specified workers
+    # 指定したワーカー数でテストを並列実行します。
     parallelize(workers: :number_of_processors)
 
-    # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
+    # test/fixtures/*.yml にあるフィクスチャを、アルファベット順にすべて読み込みます。
     fixtures :all
 
-    # Add more helper methods to be used by all tests here...
+    # ここにすべてのテストで使う共通ヘルパーメソッドを追加できます。
   end
 end

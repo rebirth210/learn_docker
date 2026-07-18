@@ -1,27 +1,27 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
+# config/locales 配下のファイルは国際化（i18n）のために使われ、
+# Rails によって自動的に読み込まれます。英語以外のロケールを使いたい場合は、
+# このディレクトリに必要なファイルを追加してください。
 #
-# To use the locales, use `I18n.t`:
+# ロケールを使うには `I18n.t` を使用します。
 #
 #     I18n.t "hello"
 #
-# In views, this is aliased to just `t`:
+# ビューではこれを単に `t` として使えます。
 #
 #     <%= t("hello") %>
 #
-# To use a different locale, set it with `I18n.locale`:
+# 別のロケールを使うには `I18n.locale` を設定します。
 #
 #     I18n.locale = :es
 #
-# This would use the information in config/locales/es.yml.
+# これにより config/locales/es.yml の内容が使われます。
 #
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
+# API の詳細については、Rails の国際化ガイドを参照してください。
+# https://guides.rubyonrails.org/i18n.html
 #
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
+# YAML では次のような大文字小文字を区別しない文字列が
+# 真偽値として解釈されることに注意してください。`true`、`false`、`on`、`off`、`yes`、`no`。
+# そのため、文字列として解釈させたい場合は引用符で囲む必要があります。例:
 #
 #     en:
 #       "yes": yup

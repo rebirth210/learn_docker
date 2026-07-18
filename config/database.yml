@@ -1,15 +1,15 @@
-# PostgreSQL. Versions 9.3 and up are supported.
+# PostgreSQL。バージョン9.3以上がサポートされます。
 #
-# Install the pg driver:
+# pgドライバをインストール：
 #   gem install pg
-# On macOS with Homebrew:
+# macOS with Homebrewの場合：
 #   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
-# On Windows:
+# Windowsの場合：
 #   gem install pg
-#       Choose the win32 build.
-#       Install PostgreSQL and put its /bin directory on your path.
+#       win32ビルドを選択してください。
+#       PostgreSQLをインストールし、その/binディレクトリをPATHに追加してください。
 #
-# Configure Using Gemfile
+# Gemfileで設定
 # gem "pg"
 #
 default: &default
@@ -25,59 +25,56 @@ development:
   <<: *default
   database: rails_app_development
 
-  # The specified database role being used to connect to PostgreSQL.
-  # To create additional roles in PostgreSQL see `$ createuser --help`.
-  # When left blank, PostgreSQL will use the default role. This is
-  # the same name as the operating system user running Rails.
+  # PostgreSQLに接続するために使用されるデータベースロールを指定します。
+  # PostgreSQLで追加のロールを作成するには `$ createuser --help` を参照してください。
+  # 空白のままにすると、PostgreSQLはデフォルトのロールを使用します。これは
+  # Railsを実行しているオペレーティングシステムユーザーと同じ名前です。
   #username: rails_app
 
-  # The password associated with the PostgreSQL role (username).
+  # PostgreSQLロール（ユーザー名）に関連付けられたパスワード。
   #password:
 
-  # Connect on a TCP socket. Omitted by default since the client uses a
-  # domain socket that doesn't need configuration. Windows does not have
-  # domain sockets, so uncomment these lines.
+  # TCPソケットで接続します。デフォルトでは省略されており、クライアントは
+  # 設定不要のドメインソケットを使用します。Windowsにはドメインソケットがないため、
+  # これらの行をコメント解除してください。
   #host: localhost
 
-  # The TCP port the server listens on. Defaults to 5432.
-  # If your server runs on a different port number, change accordingly.
+  # サーバーがリッスンするTCPポート。デフォルトは5432です。
+  # サーバーが異なるポート番号で動作している場合は、それに応じて変更してください。
   #port: 5432
 
-  # Schema search path. The server defaults to $user,public
+  # スキーマ検索パス。サーバーのデフォルトは$user,publicです。
   #schema_search_path: myapp,sharedapp,public
 
-  # Minimum log levels, in increasing order:
+  # 最小ログレベル、昇順：
   #   debug5, debug4, debug3, debug2, debug1,
   #   log, notice, warning, error, fatal, and panic
   # Defaults to warning.
   #min_messages: notice
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
+# 警告："test"として定義されたデータベースは、"rake"を実行すると
+# 開発データベースから消去され、再生成されます。
+# このDBを開発または本番と同じに設定しないでください。
 test:
   <<: *default
   database: rails_app_test
 
-# As with config/credentials.yml, you never want to store sensitive information,
-# like your database password, in your source code. If your source code is
-# ever seen by anyone, they now have access to your database.
+# config/credentials.ymlと同様に、データベースパスワードなどの機密情報を
+# ソースコードに保存したくありません。ソースコードが誰かに見られた場合、
+# 彼らはあなたのデータベースにアクセスできるようになります。
 #
-# Instead, provide the password or a full connection URL as an environment
-# variable when you boot the app. For example:
+# 代わりに、アプリを起動する際にパスワードまたは完全な接続URLを環境変数として提供してください。例えば：
 #
 #   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
 #
-# If the connection URL is provided in the special DATABASE_URL environment
-# variable, Rails will automatically merge its configuration values on top of
-# the values provided in this file. Alternatively, you can specify a connection
-# URL environment variable explicitly:
+# 特別なDATABASE_URL環境変数で接続URLが提供された場合、Railsは自動的に
+# このファイルで提供された値の上にその設定値をマージします。または、接続URL環境変数を明示的に指定できます：
 #
 #   production:
 #     url: <%= ENV["MY_APP_DATABASE_URL"] %>
 #
-# Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
-# for a full overview on how database connection configuration can be specified.
+# データベース接続設定の完全な概要については、
+# https://guides.rubyonrails.org/configuring.html#configuring-a-database を参照してください。
 #
 production:
   <<: *default

@@ -1,8 +1,8 @@
-# Be sure to restart your server when you modify this file.
+# このファイルを変更したら、サーバーを再起動してください。
 
-# Configure parameters to be partially matched (e.g. passw matches password) and filtered from the log file.
-# Use this to limit dissemination of sensitive information.
-# See the ActiveSupport::ParameterFilter documentation for supported notations and behaviors.
+# パラメータを部分一致でマッチさせ、ログから除外できるように設定します（例: passw は password にマッチします）。
+# これにより、機密情報の漏えいを抑えます。
+# ActiveSupport::ParameterFilter のドキュメントでサポートされている記法と動作を参照してください。
 Rails.application.config.filter_parameters += [
   :passw, :email, :secret, :token, :_key, :crypt, :salt, :certificate, :otp, :ssn
 ]

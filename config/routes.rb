@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # ルーティングは DSL で定義します。詳細は https://guides.rubyonrails.org/routing.html を参照してください。
+  root "application#hello"
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  # /up でアプリが正常に起動しているかを確認できます。例外がない場合は 200、そうでなければ 500 を返します。
+  # ロードバランサーや uptime 監視ツールで動作確認に使えます。
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Render dynamic PWA files from app/views/pwa/*
+  # app/views/pwa/* から動的な PWA ファイルを表示します。
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
-  # Defines the root path route ("/")
+  # ルートパス ("/") を定義します。
   # root "posts#index"
 end

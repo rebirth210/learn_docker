@@ -1,4 +1,4 @@
-# Pin npm packages by running ./bin/importmap
+# ./bin/importmap を実行して npm パッケージを固定します。
 
 pin "application"
 pin "@hotwired/turbo-rails", to: "turbo.min.js"
